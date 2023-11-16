@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: antiquewhite;
+}
+
+h3 {
+    color: red;
+}
+
+.header-verde {
+    color: green;
+}
+
+#proposto {
+    color: blue;
+}
+
+p[lang] {
+    color: blueviolet;
+    font-family: 'Oswald', sans-serif;
+}
