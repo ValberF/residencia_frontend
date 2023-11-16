@@ -1,0 +1,23 @@
+h2, h5 {
+    color: #d7a931;
+}
+
+p.Roupas, p.moveis {
+    color: blue;
+}
+
+li {
+    color: orange;
+}
+
+.lista li.usada {
+    color: purple;
+}
+
+.moveis li.usada {
+    color: greenyellow;
+}
+
+.alimentos {
+    color: aquamarine;
+}
