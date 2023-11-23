@@ -1,0 +1,24 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-auto-rows: 80px;
+    gap: 5px;
+    align-items: stretch;
+}
+
+#A1 {
+    background-color: yellow;
+}
+
+#A2 {
+    background-color: rgb(51, 0, 255);
+}
+
+#A3 {
+    background-color: pink;
+}
+
+#A4 {
+    background-color: violet;
+}
