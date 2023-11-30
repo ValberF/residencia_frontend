@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nova+Square&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+.container-destinos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  gap: 15px;
+}
+
+.destinos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  color: #6d3aa5;
+  background-color: #e5d4ff;
+
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  max-width: 200px;
+  transition: .2s;
+}
+
+.destinos:hover {
+  transform: scale(1.05);
+}
+
+img {
+  width: 80%;
+  height: 100px;
+  border-radius: 8px;
+}
+
+button {
+  font-weight: bold;
+  background-color: #8fd620;
+  width: 50%;
+
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  padding: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+  font-family: "Nova Square", sans-serif;
+}
+
+button:hover {
+  opacity: 0.6;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li:before {
+  content: "✓";
+  margin-right: 5px;
+}
+
+@media (max-width: 1200px) {
+  .container-destinos {
+    flex-direction: column;
+  }
+
+  .roteiros-viagens {
+    width: 20vw;
+  }
+}
