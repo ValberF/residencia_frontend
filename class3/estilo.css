@@ -71,6 +71,7 @@ ul li:before {
 @media (max-width: 1200px) {
   .container-destinos {
     flex-direction: column;
+    height: auto;
   }
 
   .roteiros-viagens {
