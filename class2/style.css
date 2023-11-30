@@ -1,9 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
-  font-family: sans-serif;
 }
 
 header {
@@ -16,6 +17,7 @@ header {
 
   font-size: 1.8em;
 
+  font-family: sans-serif;
   height: 100px;
 }
 
@@ -28,6 +30,7 @@ body {
   grid-template-columns: 1fr 1fr 20%;
   gap: 5px;
 
+  font-family: "Roboto", sans-serif;
   padding: 10px;
   height: 80vh;
 }
@@ -51,7 +54,9 @@ body {
 
   height: 85%;
   justify-content: space-between;
-  font-size: 1.3em;
+
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2em;
   margin-top: 15px;
 }
 
