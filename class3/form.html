@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="estilo.css" />
+  </head>
+  <body>
+    <div class="form">
+      <h1>Cadastro de Pacote</h1>
+      <input type="text" name="destino" id="destino" placeholder="Insira o seu Destino"/>
+      <input type="text" name="imagem" id="imagem" placeholder="Insira a url da imagem"/>
+      <select name="inclusoTipo" id="inclusoTipo">
+        <option value="" disabled selected>Escolha o tipo de viagem</option>
+        <option value="Áereo ida">Áereo ida</option>
+        <option value="Áereo ida e volta">Áereo ida e volta</option>
+      </select>
+      <input type="number" name="inclusoDiaria" id="inclusoDiaria" placeholder="Quantas diárias?"/>
+      <select name="inclusoCafe" id="inclusoCafe">
+        <option value="" disabled selected>Café da manhã</option>
+        <option value="Sim">Sim</option>
+        <option value="Não">Não</option>
+      </select>
+      <input type="number" min="1" step="any" id="preco" placeholder="Insira o preço da viagem"/>
+      <button id="send" onclick="setPacote()">Enviar</button>
+    </div>
+    <div class="container-destinos"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
