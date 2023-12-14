@@ -1,0 +1,8 @@
+<div class="acesso-container">
+    <div class="input-container">
+        <input type="text" [(ngModel)]="permissao" (input)="onLogando()" (keyup.enter)="logar()">
+        <button [disabled]="buttonState" (click)="logar()">Enviar</button>
+    </div>
+
+    <p>{{ mensagem }}</p>
+</div>
