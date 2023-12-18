@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Uesc</title>
-    <link rel="stylesheet" href="./class2/style.css" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <header>Uesc</header>
@@ -12,65 +12,36 @@
       <div id="item1">
         <h1>Menu</h1>
         <hr />
-        <nav>
-          <a href="http://www.uesc.br/centros/">Centros e Grupos de Pesquisa</a>
-          <a href="http://www.uesc.br/arint/">Internacional</a>
-          <a href="http://www.uesc.br/laboratorios/">Laboratórios</a>
-          <a href="http://www.uesc.br/mapa/">Mapa da Uesc</a>
-          <a href="http://www.uesc.br/nucleos/">Núcleos</a>
-          <a href="http://www.uesc.br/projetos/">Projetos</a>
-        </nav>
+        <div class="container-menu">
+          <nav>
+            <a href="http://www.uesc.br/centros/"
+              >Centros e Grupos de Pesquisa</a
+            >
+            <a href="http://www.uesc.br/arint/">Internacional</a>
+            <a href="http://www.uesc.br/laboratorios/">Laboratórios</a>
+            <a href="http://www.uesc.br/mapa/">Mapa da Uesc</a>
+            <a href="http://www.uesc.br/nucleos/">Núcleos</a>
+            <a href="http://www.uesc.br/projetos/">Projetos</a>
+          </nav>
+        </div>
       </div>
       <div id="item2">
         <h1>Notícias</h1>
         <hr />
         <div class="container-news">
-          <div class="news">
-            <h4>Reeleito, Reitor da Uesc Agradece</h4>
-            <a
-              href="https://www2.uesc.br/noticias/921/Reitor-da-Uesc-agradece-a-comunidade-academica"
-              >Confiança da Comunidade Acadêmica</a
-            >
-          </div>
-          <div class="news">
-            <h4>Eleição Reitoria 2024-2028</h4>
-            <a href="http://www.uesc.br/eleicao2024/"
-              >Relatório de Votação - Resultado</a
-            >
-          </div>
-          <div class="news">
-            <h4>Professor da Uesc Ministra Curso no Rio Grande do Sul</h4>
-            <a
-              href="https://www2.uesc.br/noticias/920/Professor-da-Uesc-Ministra-Curso-no-Rio-Grande-do-Sul"
-              >Execução das Medidas Socioeducativas em Meio Aberto</a
-            >
-          </div>
-          <div class="news">
-            <h4>Autor das Ameaças à Uesc é Apreendido</h4>
-            <a href="https://www2.uesc.br/noticias/917/Ameacas-a-Uesc"
-              >Em Ação Conjunta entre Polícias Civis da Bahia e Minas</a
-            >
-          </div>
-          <div class="news">
-            <h4>Professor da Uesc e Presidente do Fortec Gesil Amarante</h4>
-            <a
-              href="https://www2.uesc.br/noticias/910/Presidente-do-Forsec-participa-de-reuniao-no-Senado"
-              >Participa de Reunião no Senado</a
-            >
-          </div>
         </div>
         <button>Mais Notícias</button>
       </div>
       <div id="item3">
         <h1>Destaque</h1>
         <hr />
-        <img src="./class2/enade2022.png" alt="Enade 2022" />
-        <img src="./class2/mesconsciencia.png" alt="Mês da consciência" />
+        <img src="./enade2022.png" alt="Enade 2022" />
+        <img src="./mesconsciencia.png" alt="Mês da consciência" />
       </div>
       <div id="item4">
         <h1>Serviços</h1>
         <hr />
-        <nav>
+        <nav class="container-services">
           <a href="http://www.uesc.br/auditorios/">Auditórios</a>
           <a href="http://www.uesc.br/biblioteca/">Biblioteca</a>
           <a href="https://www.comprasnet.ba.gov.br">Licitações</a>
@@ -92,35 +63,10 @@
         <h1>Resultados</h1>
         <hr />
         <div class="container-results">
-          <div class="results">
-            <h4>Seleção Pública Professor Substituto</h4>
-            <a href="http://www.uesc.br/selecao_publica/"
-              >Inscrições Homologadas</a
-            >
-          </div>
-          <div class="results">
-            <h4>Processo Seletivo - Professor Visitante - PPGMC</h4>
-            <a
-              href="https://ppgmc.uesc.br/storage/seletivos/visitante2023/edital_205_2023.pdf"
-              >Edital nº 205/2023</a
-            >
-          </div>
-          <div class="results">
-            <h4>Pós-Graduação Produção Vegetal</h4>
-            <a
-              href="http://nbcgib.uesc.br/ppgpv/painel/paginas/uploads/35e154c1124c2c7715dbcda2c52361e3.pdf"
-              >Convocação para Entrevista</a
-            >
-          </div>
-          <div class="results">
-            <h4>Pós-Graduação em Ciências da Saúde</h4>
-            <a href="https://www.ppgcsuesc.com.br/processo-seletivo"
-              >Resultados da Prova de Inglês</a
-            >
-          </div>
         </div>
       </div>
     </div>
     <footer>Footer</footer>
+    <script src="./script.js"></script>
   </body>
 </html>
