@@ -1,0 +1,19 @@
+.container-results {
+    display: flex;
+    flex-direction: column;
+
+    height: 85%;
+    justify-content: space-between;
+
+    font-family: 'Playfair Display', serif;
+    font-size: 12px;
+    margin-top: 15px;
+
+    a {
+        color: blue;
+    }
+
+    p {
+        font-weight: bold;
+    }
+}
