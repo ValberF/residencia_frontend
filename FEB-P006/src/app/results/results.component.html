@@ -1,0 +1,8 @@
+<h1>Resultados</h1>
+<hr />
+<div class="container-results">
+  <div class="results" *ngFor="let result of results">
+    <p>{{ result.title }}</p>
+    <a [href]="result.url">{{ result.url }}</a>
+  </div>
+</div>
