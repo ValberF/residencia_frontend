@@ -1,0 +1,4 @@
+<div class="main-app">
+  <app-categorias [veiculos]="veiculos" (selectCategoria)="onSelectCategoria($event.tipo, $event.arrayValores)"></app-categorias>
+  <app-modelos *ngIf="tipo" [tipo]="tipo" [arrayValores]="arrayValores"></app-modelos>
+</div>
