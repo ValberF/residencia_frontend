@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { IVeiculos, IAvioes, IBarcos, ICarros } from '../../models/models';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { IAvioes, IBarcos, ICarros } from '../../models/models';
 
 @Component({
   selector: 'app-modelos',
@@ -9,8 +9,9 @@ import { IVeiculos, IAvioes, IBarcos, ICarros } from '../../models/models';
 export class ModelosComponent {
   @Input() tipo!: String
   @Input() arrayValores!: (IAvioes | IBarcos | ICarros)[]
+  @Output() selectModelo: EventEmitter<{ modelo: IAvioes | IBarcos | ICarros } | undefined> = new EventEmitter();
 
   handleClick(index: number) {
-    console.log(this.arrayValores[index])
+    this.selectModelo.emit({ modelo: this.arrayValores[index] });
   }
 }

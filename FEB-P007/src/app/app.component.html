@@ -1,4 +1,33 @@
 <div class="main-app">
-  <app-categorias [veiculos]="veiculos" (selectCategoria)="onSelectCategoria($event.tipo, $event.arrayValores)"></app-categorias>
-  <app-modelos *ngIf="tipo" [tipo]="tipo" [arrayValores]="arrayValores"></app-modelos>
+  <app-categorias
+    [veiculos]="veiculos"
+    (selectCategoria)="onSelectCategoria($event.tipo, $event.arrayValores)"
+  ></app-categorias>
+  <app-modelos
+    *ngIf="tipo"
+    [tipo]="tipo"
+    [arrayValores]="arrayValores"
+    (selectModelo)="onSelectModelo($event)"
+  ></app-modelos>
+  <app-caracteristicas
+    *ngIf="modelo"
+    [modelo]="modelo"
+    [atributos]="atributos"
+    (selectCaracteristica)="onSelectCaracteristica($event)"
+  ></app-caracteristicas>
+  <div class="resultado" *ngIf="caracteristica">
+    {{ caracteristica }}
+  </div>
+  <app-button
+    *ngIf="caracteristica"
+    message="Adicionar"
+    color="orange"
+    (click)="addVeiculo()"
+  ></app-button>
+</div>
+
+<div class="carrinho">
+  <div class="elementos" *ngFor="let elemento of veiculosAdicionados">
+    {{ elemento.Name }}
+  </div>
 </div>

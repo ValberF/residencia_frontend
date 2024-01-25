@@ -14,8 +14,13 @@ export class AppComponent implements OnInit {
     Carros: []
   }
 
+  veiculosAdicionados: Array<(IAvioes | IBarcos | ICarros)> = []
+
   tipo: String = ""
-  arrayValores: (IAvioes | IBarcos | ICarros)[] = [];
+  arrayValores: (IAvioes | IBarcos | ICarros)[] = []
+  modelo!: (IAvioes | IBarcos | ICarros)
+  atributos!: Array<string>
+  caracteristica!: string
 
   ngOnInit() {
     this.getVeiculos();
@@ -40,5 +45,23 @@ export class AppComponent implements OnInit {
   onSelectCategoria(tipo: string, arrayValores: (IAvioes | IBarcos | ICarros)[]) {
     this.tipo = tipo
     this.arrayValores = arrayValores
+  }
+
+  onSelectModelo(event: { modelo: IAvioes | IBarcos | ICarros } | undefined) {
+    if (event) {
+      this.modelo = event.modelo;
+      this.atributos = Object.keys(this.modelo)
+    }
+  }
+
+  onSelectCaracteristica(valor: any) {
+    if (valor) {
+      this.caracteristica = valor;
+    }
+  }
+
+  addVeiculo() {
+    this.veiculosAdicionados.push(this.modelo)
+    console.log(this.veiculosAdicionados)
   }
 }
