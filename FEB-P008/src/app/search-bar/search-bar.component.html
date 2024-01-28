@@ -1,0 +1,9 @@
+<div class="input-container">
+  <input
+    [(ngModel)]="valor"
+    type="text"
+    placeholder="Pesquisar na Wikipedia"
+    (keyup.enter)="setValor()"
+  />
+  <button (click)="setValor()">Buscar</button>
+</div>

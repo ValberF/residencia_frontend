@@ -1,0 +1,23 @@
+.resultados {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    div {
+        display: flex;
+        flex-direction: column;
+
+        width: 80vw;
+        padding: 20px;
+        gap: 10px;
+
+        border: 2px solid #cccccc5b;
+        border-radius: 20px;
+    }
+
+    a {
+        text-decoration: inherit;
+        color: #6285E0;
+        cursor: pointer;
+    }
+}
