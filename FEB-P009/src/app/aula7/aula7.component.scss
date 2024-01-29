@@ -1,0 +1,39 @@
+.main-app {
+    display: flex;
+
+    gap: 50px;
+
+    padding: 100px 50px 0 50px;
+
+    .resultado {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 25px;
+        border-radius: 10px;
+        min-width: 200px;
+        height: 150px;
+
+        color: #fff;
+        background-color: #a50dd4;
+    }
+}
+
+.carrinho {
+    display: flex;
+    flex-wrap: wrap;
+
+    padding: 25px 50px;
+
+    .elementos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 10px;
+        border: 2px solid #e7e7e7;
+        min-height: 100px;
+        min-width: 250px;
+    }
+}
