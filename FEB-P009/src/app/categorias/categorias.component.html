@@ -1,0 +1,12 @@
+<div class="categorias">
+    <app-button message="Categorias" color="orange"></app-button>
+    <div class="tipos">
+      <app-button
+        *ngFor="let tipo of tipos"
+        [message]="tipo"
+        color="purple"
+        (click)="handleClick(tipo)"
+      ></app-button>
+    </div>
+  </div>
+  

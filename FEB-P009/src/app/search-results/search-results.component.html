@@ -1,0 +1,11 @@
+<div class="resultados">
+  <div *ngFor="let resultado of resultados">
+    <h2>{{ resultado.title }}</h2>
+    <p [innerHTML]="resultado.snippet | bold : termo"></p>
+    <a
+      target="_blank"
+      href="https://pt.wikipedia.org/wiki/{{ resultado.title }}"
+      >Leia mais...</a
+    >
+  </div>
+</div>

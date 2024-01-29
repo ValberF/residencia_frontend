@@ -1,0 +1,12 @@
+<div class="modelos">
+    <app-button [message]="tipo" color="orange"></app-button>
+    <div class="modelo">
+      <app-button
+        *ngFor="let modelo of arrayValores; let i = index"
+        [message]="modelo.Name"
+        color="blue"
+        (click)="handleClick(i)"
+      ></app-button>
+    </div>
+  </div>
+  
