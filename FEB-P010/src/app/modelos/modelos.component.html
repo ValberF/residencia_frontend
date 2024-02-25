@@ -1,0 +1,11 @@
+<div class="modelos" *ngIf="tipo">
+  <app-button [message]="tipo" color="orange"></app-button>
+  <div class="modelo">
+    <app-button
+      *ngFor="let modelo of modelos; let i = index"
+      [message]="modelo.Name"
+      color="blue"
+      (click)="handleClick(modelo)"
+    ></app-button>
+  </div>
+</div>

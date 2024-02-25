@@ -1,0 +1,16 @@
+<div class="main-app">
+  <app-categorias></app-categorias>
+  <app-modelos></app-modelos>
+  <app-caracteristicas></app-caracteristicas>
+  <div class="resultado" *ngIf="caracteristica">
+    {{ caracteristica }}
+  </div>
+  <app-button
+    *ngIf="caracteristica"
+    message="Adicionar"
+    color="orange"
+    (click)="addVeiculo()"
+  ></app-button>
+</div>
+
+<app-carrinho />

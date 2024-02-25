@@ -1,0 +1,11 @@
+<div class="caracteristicas" *ngIf="modelo.Name">
+  <app-button [message]="modelo.Name" color="orange"></app-button>
+  <div class="tipos">
+    <app-button
+      *ngFor="let atributo of atributos"
+      [message]="atributo"
+      color="blue"
+      (click)="handleClick(atributo)"
+    ></app-button>
+  </div>
+</div>
