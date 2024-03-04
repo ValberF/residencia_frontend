@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'cadastro', component: RegisterPetComponent },
   { path: 'editar/:id', component: EditPetComponent },
-  { path: 'lista', component: ListPetComponent },
+  { path: 'atendimentos', component: ListPetComponent },
   { path: 'detalhes/:id', component: DetailsPetComponent },
 ];
 

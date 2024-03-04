@@ -1,29 +1,46 @@
+// list-pet.component.ts
 import { Component, OnInit } from '@angular/core';
 import { IPet } from '../models/pet.model';
 import { DataBaseService } from '../data-base.service';
 import { Router } from '@angular/router';
+import { catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-list-pet',
   templateUrl: './list-pet.component.html',
-  styleUrl: './list-pet.component.scss'
+  styleUrls: ['./list-pet.component.scss']
 })
 export class ListPetComponent implements OnInit {
-  pets: IPet[] = []
+  pets: IPet[] = [];
 
-  constructor(private dataBaseService: DataBaseService, private routes: Router) { }
+  constructor(private dataBaseService: DataBaseService, private router: Router) { }
 
   ngOnInit(): void {
-    this.dataBaseService.getPets().subscribe(data => {
-      this.pets = data
-    })
+    this.fetchPets();
   }
 
-  removePet(pet: IPet) {
-    if (pet.id !== undefined) {
-      this.dataBaseService.apagarPet(pet.id);
+  fetchPets(): void {
+    this.dataBaseService.getPets().subscribe(data => {
+      this.pets = data;
+    });
+  }
+
+  removePet(pet: IPet): void {
+    if (pet.id) {
+      this.dataBaseService.deletePet(pet.id).subscribe(
+        {
+          next: () => {
+            console.log('Pet excluído com sucesso.');
+            this.fetchPets();
+          },
+          error: (erro) => {
+            console.error('Ocorreu um erro ao excluir o pet:', erro);
+          }
+        }
+      );
     } else {
-      console.error("ID do pet é undefined.");
+      console.error('ID do pet é indefinido.');
     }
   }
 }

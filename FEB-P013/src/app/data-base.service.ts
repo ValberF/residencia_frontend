@@ -17,14 +17,8 @@ export class DataBaseService implements OnInit {
 
   }
 
-  addPet(petData: IPet) {
-
-    this.http.post(
-      'https://petshop-707d6-default-rtdb.firebaseio.com/posts.json',
-      petData)
-      .subscribe(responseData => {
-        console.log(responseData);
-      });
+  addPet(petData: IPet): Observable<any> {
+    return this.http.post('https://petshop-707d6-default-rtdb.firebaseio.com/posts.json', petData);
   }
 
   getPets() {
@@ -47,7 +41,7 @@ export class DataBaseService implements OnInit {
       );
   }
 
-  apagarPet(id: string) {
+  deletePet(id: string) {
     return this.http.delete(`https://petshop-707d6-default-rtdb.firebaseio.com/posts/${id}.json`);
   }
 
@@ -55,7 +49,7 @@ export class DataBaseService implements OnInit {
     return this.http.get<IPet>(`https://petshop-707d6-default-rtdb.firebaseio.com/posts/${id}.json`);
   }
 
-  editarPet(id: string, petData: IPet
+  updatePet(id: string, petData: IPet
   ) {
     return this.http.put(`https://petshop-707d6-default-rtdb.firebaseio.com/posts/${id}.json`, petData, { observe: 'response' });
   }

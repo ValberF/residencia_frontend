@@ -31,10 +31,10 @@ export class EditPetComponent implements OnInit {
   }
 
   savePet() {
-    this.dataBaseService.editarPet(this.route.snapshot.paramMap.get('id')!, this.form.value).subscribe(data => {
+    this.dataBaseService.updatePet(this.route.snapshot.paramMap.get('id')!, this.form.value).subscribe(data => {
       if (data.status == 200) {
         setTimeout(() => {
-          this.routes.navigate(['/lista'])
+          this.routes.navigate(['/atendimentos'])
         }, 100);
       }
     })
