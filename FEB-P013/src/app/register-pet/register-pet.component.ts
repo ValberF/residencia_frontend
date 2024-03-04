@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class RegisterPetComponent implements OnInit {
   form!: FormGroup;
 
-  constructor(private dataBaseService: DataBaseService, private routes: Router) { }
+  constructor(private dataBaseService: DataBaseService, private router: Router) { }
 
 
   ngOnInit(): void {
@@ -28,9 +28,13 @@ export class RegisterPetComponent implements OnInit {
   }
 
   addPet() {
-    this.dataBaseService.addPet(this.form.value)
-    setTimeout(() => {
-      this.routes.navigate(['/lista'])
-    }, 100);
+    this.dataBaseService.addPet(this.form.value).subscribe({
+      next: () => {
+        this.router.navigate(['atendimentos'])
+      },
+      error: (erro) => {
+        alert("Erro!")
+      }
+    });
   }
 }

@@ -19,14 +19,4 @@ export class DetailsPetComponent implements OnInit {
       this.pet = data
     })
   }
-
-  // savePet() {
-  //   this.dataBaseService.editarPet(this.route.snapshot.paramMap.get('id')!, this.form.value).subscribe(data => {
-  //     if (data.status == 200) {
-  //       setTimeout(() => {
-  //         this.routes.navigate(['/lista'])
-  //       }, 100);
-  //     }
-  //   })
-  // }
 }
