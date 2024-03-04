@@ -17,8 +17,8 @@
         <tr class="pet" *ngFor="let pet of pets">
           <td>{{ pet.name }}</td>
           <td>{{ pet.dateOfBirth }}</td>
-          <td>{{ pet.type }}</td>
-          <td>{{ pet.breed }}</td>
+          <td>{{ pet.type[0].toUpperCase() + pet.type.slice(1) }}</td>
+          <td>{{ pet.breed[0].toUpperCase() + pet.breed.slice(1) }}</td>
           <td>{{ pet.weight }}kg</td>
           <td class="details" routerLink="/detalhes/{{ pet.id }}">
             <i-feather name="file-minus"></i-feather>
