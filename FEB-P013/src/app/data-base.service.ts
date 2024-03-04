@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import { IPet } from '../app/models/pet.model';
-import { Observable, map, of } from 'rxjs';
+import { Observable, catchError, map, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +13,6 @@ export class DataBaseService implements OnInit {
 
   constructor(private http: HttpClient) { }
 
-
-
   ngOnInit(): void {
 
   }
@@ -22,7 +20,7 @@ export class DataBaseService implements OnInit {
   addPet(petData: IPet) {
 
     this.http.post(
-      'https://aula13-3a92f-default-rtdb.firebaseio.com/posts.json',
+      'https://petshop-707d6-default-rtdb.firebaseio.com/posts.json',
       petData)
       .subscribe(responseData => {
         console.log(responseData);
@@ -30,7 +28,7 @@ export class DataBaseService implements OnInit {
   }
 
   getPets() {
-    return this.http.get<{ [key: string]: IPet }>('https://aula13-3a92f-default-rtdb.firebaseio.com/posts.json',
+    return this.http.get<{ [key: string]: IPet }>('https://petshop-707d6-default-rtdb.firebaseio.com/posts.json',
       {
         params: new HttpParams().set('print', 'pretty')
       }
@@ -49,25 +47,17 @@ export class DataBaseService implements OnInit {
       );
   }
 
-  apagarTodosPets() {
-    return this.http.delete('https://aula13-3a92f-default-rtdb.firebaseio.com/posts.json');
-  }
-
-  getPet2() {
-    return this.http.get('https://aula13-3a92f-default-rtdb.firebaseio.com/posts.json',
-      {
-        params: new HttpParams().set('print', 'pretty')
-      }
-    );
+  apagarPet(id: string) {
+    return this.http.delete(`https://petshop-707d6-default-rtdb.firebaseio.com/posts/${id}.json`);
   }
 
   getPet(id: string) {
-    return this.http.get<IPet>(`https://aula13-3a92f-default-rtdb.firebaseio.com/posts/${id}.json`);
+    return this.http.get<IPet>(`https://petshop-707d6-default-rtdb.firebaseio.com/posts/${id}.json`);
   }
 
   editarPet(id: string, petData: IPet
   ) {
-    return this.http.put(`https://aula13-3a92f-default-rtdb.firebaseio.com/posts/${id}.json`, petData, { observe: 'response' });
+    return this.http.put(`https://petshop-707d6-default-rtdb.firebaseio.com/posts/${id}.json`, petData, { observe: 'response' });
   }
 
 }

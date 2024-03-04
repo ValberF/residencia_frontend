@@ -1,11 +1,11 @@
 export interface IPet {
-    id?: string
+    id?: string | 'teste'
     name: string
     type: string
     breed: string
-    weight: string
+    weight: number
     dateOfBirth: string
     medicines: string
     exams: string
-    infos: string
+    infos?: string
 }
