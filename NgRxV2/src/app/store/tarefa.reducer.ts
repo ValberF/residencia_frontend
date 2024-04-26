@@ -17,11 +17,10 @@ export const tarefasReducer = createReducer(
     estadoInicial,
     on(adicionarTarefa, (estado, action) => ({ ...estado, tarefas: [...estado.tarefas, action.tarefa] })),
     on(removerTarefa, (estado, action) => ({ ...estado, tarefas: estado.tarefas.filter(t => t.id !== action.id) })),
-    on(editarTarefa, (estado, action) => {
-        const tarefaEditada = estado.tarefas.find(t => t.id === action.id);
-        if (tarefaEditada) {
-            tarefaEditada.descricao = action.descricao;
-        }
-        return { ...estado, tarefas: [...estado.tarefas] };
-    })
+    on(editarTarefa, (estado, action) => ({
+        ...estado,
+        tarefas: estado.tarefas.map(tarefa =>
+            tarefa.id === action.id ? { ...tarefa, descricao: action.descricao } : tarefa
+        )
+    }))
 );

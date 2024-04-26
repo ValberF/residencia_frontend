@@ -6,11 +6,12 @@ import { selectorSelecionaTarefa } from '../store/tarefa.seletors';
 import { Tarefa } from '../tarefa.model';
 import { removerTarefa, editarTarefa } from '../store/tarefa.actions';
 import { CommonModule } from '@angular/common';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-show-tarefas',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink, RouterLinkActive],
   templateUrl: './show-tarefas.component.html',
   styleUrls: ['./show-tarefas.component.css']
 })
